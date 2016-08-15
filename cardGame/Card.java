@@ -17,4 +17,9 @@ public SuitType getSuit(){
 public RankType getRank(){
   return this.rank;
 }
+
+public String getCard(){
+   return this.rank.name() + " of " + this.suit.name();
+ }
+
 }

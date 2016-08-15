@@ -8,12 +8,14 @@ public class GameTest {
   Player player;
   ArrayList<Card> cards;
   Deck deck;
+  Card card1;
 
   @Before
   public void before(){
-    player = new Player("Mary");
+    player1 = new Player("Mary");
     cards = new ArrayList<Card>();
     deck = new Deck(cards);
+    card1 = new Card(Q,SuitType.DIAMONDS);
   
   }
 
@@ -48,6 +50,21 @@ public class GameTest {
     deck.createDeck();
     assertEquals(SuitType.SPADES, deck.getDeck().get(51).getSuit());
   }
+
+  @Test
+  public void printShuffledDeck(){
+    deck.createDeck();
+    deck.shuffle();
+    ArrayList cards = deck.getDeck();
+    for(Object object : cards){
+         Card original = (Card) object;
+         System.out.println(original.getCard());
+       }
+  }
+
+
+
+
 }
 
 
